@@ -1,15 +1,13 @@
 import java.io.*;
 import java.net.*;
-<<<<<<< HEAD
-=======
+
 class UDPServer
 {
    public static void main(String args[]) throws Exception
       {
-<<<<<<< HEAD
+
 		DatagramSocket serverSocket = new DatagramSocket(9876);
             byte[] receiveData = new byte[1024];
             byte[] sendData = new byte[1024];
-=======
->>>>>>> 229776d053c59e6740e76127ea914d3987a3338c
->>>>>>> e20fce4e11a376f21340478cda8d154d041739c7
+
+
