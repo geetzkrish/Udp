@@ -13,13 +13,13 @@ class UdpServer
                {
                   DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                   serverSocket.receive(receivePacket);
-                  String sentence = new String( receivePacket.getData());
+                  String sentence = new String( receivePacket.getData(),0,receivePacket.getLength());
                   System.out.println("RECEIVED: " + sentence);
-			   InetAddress IPAddress = receivePacket.getAddress();
+                  InetAddress IPAddress = receivePacket.getAddress();
                   int port = receivePacket.getPort();
                   String capitalizedSentence = sentence.toUpperCase();
                   sendData = capitalizedSentence.getBytes();
-                  DatagramPacket sendPacket =
+                   DatagramPacket sendPacket =
                   new DatagramPacket(sendData, sendData.length, IPAddress, port);
                   serverSocket.send(sendPacket);
                }
